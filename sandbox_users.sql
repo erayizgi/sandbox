@@ -1,0 +1,1 @@
+INSERT INTO sandbox.users (id, name, email, password, remember_token, created_at, updated_at, deleted_at) VALUES (1, 'eray', 'erayizgi@gmail.com', '$2y$12$HPp37d7lzjBxxMyrOjDGge47O0qqArkf9ZG5wMckZsJdBqgCQp3IS', null, null, null, null);

@@ -1,0 +1,1 @@
+INSERT INTO sandbox.balance (balance_id, user_id, amount, transaction_id, created_at, updated_at, deleted_at) VALUES (1, 1, 2500, 1, '2018-05-24 20:33:24', '2018-05-24 20:33:24', null);
