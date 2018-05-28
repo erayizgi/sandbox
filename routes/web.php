@@ -15,3 +15,11 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+Route::prefix('sandbox')->group(function () {
+	Route::post('/withdraw', 'SandboxController@withdraw');
+	Route::post('/getPlayerInfo', 'SandboxController@getPlayerInfo');
+	Route::post('/withdrawDeposit', 'SandboxController@withdrawDeposit');
+	Route::delete('/rollbackTransaction', 'SandboxController@rollbackTransaction');
+});

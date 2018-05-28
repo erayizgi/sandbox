@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+	    'sandbox/withdraw',
+	    'sandbox/withdrawDeposit',
+        'sandbox/getPlayerInfo',
+	    'sandbox/rollbackTransaction',
     ];
 }

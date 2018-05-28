@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    use SoftDeletes;
-    protected $guarded = [];
-    protected $appends = ["balance"];
+	use Notifiable;
+	use SoftDeletes;
+	protected $guarded = [];
+	protected $appends = ["balance"];
 
-    public function getBalanceAttribute()
-    {
-        $balance_sum =  DB::table("balance")
-            ->where("user_id",$this->attributes["id"])
-            ->select("*")
-            ->sum("amount");
+	public function getBalanceAttribute()
+	{
+		$balance_sum = DB::table("balance")
+			->where("user_id", $this->attributes["id"])
+			->where('deleted_at', NULL)
+			->select("*")
+			->sum("amount");
 
-        return (float) $balance_sum;
-    }
+		return (float)$balance_sum;
+	}
 }
